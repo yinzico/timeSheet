@@ -1,1 +1,22 @@
-<p>current-schedule works!</p>
+<div class="grid grid-cols-3 gap-2">
+  <div class="flex gap-2 items-center">
+    <p class="text-xl font-semibold text-blue-700">Student Name</p>
+    <p class="text-lg">{{studentInfo?.name}}</p>
+  </div>
+  <div class="flex gap-2 items-center">
+    <p class="text-xl font-semibold text-blue-700">Student ID</p>
+    <p class="text-lg">{{studentInfo?.studentId}}</p>
+  </div>
+  <div class="flex gap-2 items-center">
+    <p class="text-xl font-semibold text-blue-700">Upcomming/Current Class</p>
+    <p class="text-lg">{{studentInfo?.className}}</p>
+  </div>
+  <div class="flex gap-2 items-center">
+    <p class="text-xl font-semibold text-blue-700">Class Date</p>
+    <p class="text-lg">{{studentInfo?.date}}</p>
+  </div>
+  <div class="flex gap-2 items-center">
+    <p class="text-xl font-semibold text-blue-700">Class Time</p>
+    <p class="text-lg">{{studentInfo?.time}}</p>
+  </div>
+</div>
