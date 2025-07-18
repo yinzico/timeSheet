@@ -1,0 +1,21 @@
+<div class="flex items-center h-full bg-gradient-to-r from-purple-500 to-pink-500">
+  <mat-card class="w-[70%] m-auto p-5">
+  <mat-card-header class="mb-2">
+    <mat-card-title>Smart Student time sheet system </mat-card-title>
+    <mat-card-subtitle>Please Enter Your ID</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="flex gap-3 items-center justify-center">
+      <div>
+        <mat-label>Student ID</mat-label>
+      </div>
+      <mat-form-field appearance="outline" class="w-[50%]">
+        <input matInput [(ngModel)]="studentId" placeholder="enter your ID" (keydown.enter)="onGetStudentIdClick()">
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="flex justify-end">
+    <button mat-raised-button color="primary" (click)="onGetStudentIdClick()">Enter</button>
+  </mat-card-actions>
+</mat-card>
+</div>
