@@ -5,6 +5,7 @@ import { ICurrentClass } from '../../models/current-class';
 import { IClass } from '../../models/class';
 import { NotificationService } from '../notification-service/notification.service';
 import { Router } from '@angular/router';
+import { StudentRepository } from '../../repositories/student-repository';
 
 @Injectable({
   providedIn: 'root'
@@ -15,17 +16,18 @@ export class FacadeService implements OnDestroy{
 
   studentCurrent$ = this.studentCurrentClassSubject.asObservable();
   classes$ = this.classesSubject.asObservable();
-  private studentService = inject(StudentService)
+  private studentRepo = inject(StudentRepository)
   private notificationService = inject(NotificationService)
   private router = inject(Router)
   private destroy$ = new Subject<void>();
   constructor() { }
 
   getStudentSchedules(id:string){
-    this.studentService.getStudentScheduleByStudentId(id).pipe(
+    this.studentRepo.getStudentSchedules(id).pipe(
       takeUntil(this.destroy$),
       map((response: any) => response.data),
       tap(data => {
+        console.log(data)
          const today = new Date().toISOString().split('T')[0];
         const currentClass = data.classes.find((cls:IClass) => cls.date === today);
 
