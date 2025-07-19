@@ -1,4 +1,3 @@
-// local-mock.strategy.ts
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IStudentSchedule } from '../models/student-schedule';
