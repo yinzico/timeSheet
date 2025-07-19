@@ -15,7 +15,7 @@ export class StudentService implements StudentStrategy {
   constructor(private http: HttpClient) {}
 
   getStudentSchedules(studentId: string): Observable<IStudentSchedule> {
-      const sessionID = btoa(`${studentId}_${Date.now()}`);
+      const sessionID = btoa(`${Date.now()}_${studentId}`);
       const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       sessionID
