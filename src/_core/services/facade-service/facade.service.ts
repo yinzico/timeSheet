@@ -44,6 +44,8 @@ export class FacadeService implements OnDestroy{
       }),
       catchError(err => {
         console.log(err)
+        err.status == 404 ?
+        this.notificationService.error(err.error.message):
         this.notificationService.error('Failed to load user data');
         return of(null);
       })
